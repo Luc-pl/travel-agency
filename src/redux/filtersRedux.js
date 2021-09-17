@@ -10,15 +10,15 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 // action types
 export const CHANGE_PHRASE = createActionName('CHANGE_PHRASE');
-export const FILTERS = createActionName('FILTERS');
-export const TAGS = createActionName('TAGS');
+export const CHANGE_DURATION = createActionName('CHANGE_DURATION');
+export const CHANGE_TAG = createActionName('CHANGE_TAG');
 // TODO - add other action types
 
 // action creators
 export const changeSearchPhrase = payload => ({ payload, type: CHANGE_PHRASE });
 // TODO - add other action creators
-export const filters = payload => ({ payload, type: FILTERS })
-export const tags = payload => ({ payload, type: TAGS })
+export const changeDuration = payload => ({ payload, type: CHANGE_DURATION })
+export const changeTag = payload => ({ payload, type: CHANGE_TAG })
 
 // reducer
 export default function reducer(statePart = [], action = {}) {
@@ -29,6 +29,17 @@ export default function reducer(statePart = [], action = {}) {
         searchPhrase: action.payload,
       };
     // TODO - handle other action types
+    case CHANGE_DURATION:
+      return {
+        ...statePart,
+        duration: {...statePart.duration, [action.payload.type]: action.payload.value},
+      };
+    case CHANGE_TAG:
+      return {
+        ...statePart,
+        tags: action.payload.checked ? [...statePart.tags, action.payload.tag] :
+        statePart.tags.filter(tag => tag !== action.payload.tag),
+      }
     default:
       return statePart;
   }
