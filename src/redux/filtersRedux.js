@@ -37,7 +37,7 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_TAG:
       return {
         ...statePart,
-        tags: [...statePart.tags, action.payload],
+        tags: [...statePart.tags, action.payload.tags],
       }
     default:
       return statePart;
