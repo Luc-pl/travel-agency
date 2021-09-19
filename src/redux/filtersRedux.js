@@ -37,8 +37,7 @@ export default function reducer(statePart = [], action = {}) {
     case CHANGE_TAG:
       return {
         ...statePart,
-        tags: action.payload.checked ? [...statePart.tags, action.payload.tag] :
-        statePart.tags.filter(tag => tag !== action.payload.tag),
+        tags: [...statePart.tags, action.payload],
       }
     default:
       return statePart;
