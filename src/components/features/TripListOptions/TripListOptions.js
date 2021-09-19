@@ -12,6 +12,7 @@ class TripListOptions extends React.Component {
     } else {
       console.log('Removing tag', tag);
       // TODO - use action dispatcher from props
+      this.props.changeTag({tag: tag, checked: checked});
     }
   }
 
