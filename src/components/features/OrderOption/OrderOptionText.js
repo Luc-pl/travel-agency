@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './OrderOption.scss';
+import styles from './OrderOption.module.scss';
 
 const OrderOptionText = ({name, setOptionValue}) => (
   <div className={styles.component}>

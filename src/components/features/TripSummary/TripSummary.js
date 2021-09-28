@@ -27,10 +27,10 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
 TripSummary.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   image: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   intro: PropTypes.string,
-  cost: PropTypes.string,
-  days: PropTypes.number,
+  cost: PropTypes.string.isRequired,
+  days: PropTypes.number.isRequired,
   tags: PropTypes.array,
 };
 

@@ -6,16 +6,17 @@ import {Row, Col} from 'react-flexbox-grid';
 
 class TripListOptions extends React.Component {
   handleTags(tag, checked){
-    if(checked) {
+    // eslint-disable-next-line no-lone-blocks
+    {/*if(checked) {
       console.log('Adding tag', tag);
       // TODO - use action dispatcher from props
       this.props.addTag(tag);
     } else {
       console.log('Removing tag', tag);
       // TODO - use action dispatcher from props
-      this.props.removeTag(tag);
+    */}
+      this.props.changeTag({tag: tag, checked: checked});
     }
-  }
 
   handleDuration(type, value){
     console.log('Changing duration', type, value);
@@ -79,8 +80,9 @@ TripListOptions.propTypes = {
   filters: PropTypes.object,
   changeSearchPhrase: PropTypes.func,
   changeDuration: PropTypes.func,
-  addTag: PropTypes.func,
-  removeTag: PropTypes.func,
+  changeTag: PropTypes.func,
+  //addTag: PropTypes.func,
+  //removeTag: PropTypes.func,
 };
 
 export default TripListOptions;
