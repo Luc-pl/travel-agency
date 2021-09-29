@@ -15,8 +15,8 @@ class TripListOptions extends React.Component {
       console.log('Removing tag', tag);
       // TODO - use action dispatcher from props
     */}
-      this.props.changeTag({tag: tag, checked: checked});
-    }
+    this.props.changeTag({tag: tag, checked: checked});
+  }
 
   handleDuration(type, value){
     console.log('Changing duration', type, value);

@@ -67,14 +67,14 @@ const Trip = ({error, id, name, image, cost, days, description, country, intro})
           </Row>
         </Grid>
       </DetailsBox>
-        <Grid>
-          <Row>
-            <Col xs={12}>
-              <PageTitle text='Trip options' />
-              <OrderForm tripCost={cost} tripId={id} tripName={name} countryCode={country.alpha3Code} />
-            </Col>
-          </Row>
-        </Grid>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <PageTitle text='Trip options' />
+            <OrderForm tripCost={cost} tripId={id} tripName={name} countryCode={country.alpha3Code} />
+          </Col>
+        </Row>
+      </Grid>
     </Section>
   );
 };
@@ -88,6 +88,8 @@ Trip.propTypes = {
   country: PropTypes.object,
   id: PropTypes.string,
   order: PropTypes.string,
+  error: PropTypes.node,
+  intro: PropTypes.node,
 };
 
 export default Trip;
