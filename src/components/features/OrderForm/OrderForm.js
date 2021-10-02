@@ -10,12 +10,15 @@ import settings from '../../../data/settings';
 import Button from '../../common/Button/Button';
 
 
-const sendOrder = (options, tripCost) => {
+const sendOrder = (tripId, tripName, options, tripCost, countryCode) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
 
   const payload = {
     ...options,
     totalCost,
+    tripId,
+    countryCode,
+    tripName,
   };
 
   const url = settings.db.url + '/' + settings.db.endpoint.orders;
@@ -58,6 +61,10 @@ OrderForm.propTypes = {
   options: PropTypes.object,
   pricing: PropTypes.array,
   setOrderOption: PropTypes.func,
+  tripId: PropTypes.string,
+  countryCode: PropTypes.string,
+  tripName: PropTypes.string,
+  tripDuration: PropTypes.number,
 };
 
 export default OrderForm;
