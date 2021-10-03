@@ -32,6 +32,11 @@ const sendOrder = (tripId, tripName, options, tripCost, countryCode) => {
     body: JSON.stringify(payload),
   };
 
+  if(options.name == '' || options.contact == ''){
+    alert('Please fill out the missing fields');
+    return;
+  }
+
   fetch(url, fetchOptions)
     .then(function(response){
       return response.json();
@@ -42,7 +47,7 @@ const sendOrder = (tripId, tripName, options, tripCost, countryCode) => {
 
 
 
-const OrderForm = ({tripCost, options, setOrderOption}) => (
+const OrderForm = ({tripCost, options, setOrderOption, tripId, countryCode, tripName, tripDuration}) => (
   <Row>
     {pricing.map((option) => (
       <Col md={4} key={option.id}>
@@ -50,9 +55,9 @@ const OrderForm = ({tripCost, options, setOrderOption}) => (
       </Col>
     ))}
     <Col xs={12}>
-      <OrderSummary tripCost={tripCost} options={options}/>
+      <OrderSummary tripCost={tripCost} options={options} tripDuration={tripDuration} />
+      <Button onClick={() => sendOrder(tripCost, options, setOrderOption, tripId, countryCode, tripName)}>Order now!</Button>
     </Col>
-    <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
   </Row>
 );
 
