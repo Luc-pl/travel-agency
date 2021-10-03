@@ -12,6 +12,7 @@ import Button from '../../common/Button/Button';
 
 const sendOrder = (tripId, tripName, options, tripCost, countryCode) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
+  
 
   const payload = {
     ...options,
@@ -32,7 +33,7 @@ const sendOrder = (tripId, tripName, options, tripCost, countryCode) => {
     body: JSON.stringify(payload),
   };
 
-  if(options.name == '' || options.contact == ''){
+  if(tripName.name == '' || tripName.contact == ''){
     alert('Please fill out the missing fields');
     return;
   }
