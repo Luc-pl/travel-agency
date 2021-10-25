@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import HappyHourAd from './HappyHourAd';
+import HappyHourAd from './HappyHourAd.js';
 
 const select = {
   title:'.title',
@@ -88,4 +88,13 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('11:59:58', 1, '1');
   checkDescriptionAfterTime('13:00:00', 60 * 60, 22 * 60 * 60 + '');
 });
+
+// Test 6
+
+describe('Component HappyHourAd with mocked Date', () => {
+  checkDescriptionAtTime('12:00:00', mockProps.promoDescription);
+  checkDescriptionAtTime('12:59:59', mockProps.promoDescription);
+});
+
+
 
