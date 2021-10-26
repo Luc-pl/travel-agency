@@ -51,8 +51,11 @@
   bottom: 20px;
   left: 0;
   right: 0;
-  background-color: white;
+  background-color: red;
+  color: white;
   margin: 0 650px 0 650px;
   font-size: 17px;
   text-align: center;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
