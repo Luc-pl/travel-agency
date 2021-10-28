@@ -51,10 +51,26 @@
   bottom: 20px;
   left: 0;
   right: 0;
-  background-color: red;
+  background-color: #eb4d4b;
   color: white;
   margin: 0 650px 0 650px;
   font-size: 17px;
+  text-align: center;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.daysToSummer{
+  z-index: 999;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  background-color: #f9ca24;
+  color: white;
+  margin: 0 550px 0 550px;
+  font-size: 37px;
+  font-weight: bold;
   text-align: center;
   -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
